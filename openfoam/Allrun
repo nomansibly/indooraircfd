@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+case_dir="${1:-openfoam/cases/cross_room}"
+export WM_PROJECT_DIR="${WM_PROJECT_DIR:-/usr/share/openfoam}"
+export WM_PROJECT_VERSION="${WM_PROJECT_VERSION:-v1912}"
+export FOAM_ETC="${FOAM_ETC:-$WM_PROJECT_DIR/etc}"
+for executable in blockMesh checkMesh buoyantBoussinesqPimpleFoam; do
+    command -v "$executable" >/dev/null || { echo "Missing $executable. Load OpenCFD v1912 first." >&2; exit 1; }
+done
+blockMesh -case "$case_dir" > "$case_dir/log.blockMesh" 2>&1
+checkMesh -case "$case_dir" > "$case_dir/log.checkMesh" 2>&1
+rg -q 'Mesh OK' "$case_dir/log.checkMesh" || { echo 'Mesh check failed' >&2; exit 1; }
+# v1912 Ubuntu package has a SHA1-stream failure in runtime function objects.
+# Linear residuals and continuity remain in the solver log; export is separate.
+buoyantBoussinesqPimpleFoam -noFunctionObjects -case "$case_dir" > "$case_dir/log.solver" 2>&1
+foamToVTK -case "$case_dir" -latestTime -ascii -no-boundary -no-point-data -fields '(U T k omega nut)' > "$case_dir/log.export" 2>&1
+printf 'Completed %s. Review residuals/time histories before interpreting.\n' "$case_dir"

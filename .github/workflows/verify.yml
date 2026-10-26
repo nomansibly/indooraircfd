@@ -8,10 +8,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -r requirements.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r requirements-dashboard.txt
       - run: python -m unittest discover -s tests -v
       - run: python -m iaq
+      - run: python -m iaq.transient
+      - run: python scripts/build_site.py --output site-dist
       - uses: actions/upload-artifact@v4
         with:
-          name: airflow-results
-          path: results/
+          name: airflow-results-and-site
+          path: |
+            results/
+            site-dist/

@@ -1,0 +1,59 @@
+{
+  "layout": "cross_room",
+  "solver": "buoyantBoussinesqPimpleFoam",
+  "turbulence": "kOmegaSST",
+  "release": "OpenCFD v1912 patch 200626 / Ubuntu 24.04 package",
+  "time_s": 600.0,
+  "cells": 3840,
+  "volume_m3": 120.0,
+  "occupied_mean_temperature_c": 23.45705795288086,
+  "occupied_mean_speed_m_s": 0.05980909615755081,
+  "occupied_mean_pmv": -0.03428003053430047,
+  "occupied_mean_ppd": 5.3631293001044265,
+  "temperature_range_c": [
+    20.071990966796875,
+    25.003021240234375
+  ],
+  "speed_max_m_s": 0.3631493151187897,
+  "inlet_flux_m3_s": -0.12000000000000001,
+  "outlet_flux_m3_s": 0.119999999,
+  "relative_net_boundary_flux": 8.333333444595265e-09,
+  "last_equation_residuals": {
+    "Ux": {
+      "initial": 0.00068764145,
+      "linear_final": 4.307435e-09
+    },
+    "Uy": {
+      "initial": 0.0022039351,
+      "linear_final": 7.4628075e-11
+    },
+    "Uz": {
+      "initial": 0.0028121088,
+      "linear_final": 8.227088e-11
+    },
+    "T": {
+      "initial": 0.00018373884,
+      "linear_final": 2.1925505e-10
+    },
+    "p_rgh": {
+      "initial": 0.0012577897,
+      "linear_final": 4.4464246e-09
+    },
+    "omega": {
+      "initial": 2.1760391e-05,
+      "linear_final": 7.7399995e-09
+    },
+    "k": {
+      "initial": 5.6702276e-05,
+      "linear_final": 9.4947177e-11
+    }
+  },
+  "last_continuity": {
+    "local": 3.7969899e-11,
+    "global": -2.1391834e-12
+  },
+  "status": "Executed 600 s URANS startup snapshot on coarse mesh. Not steady, time-averaged, mesh-independent, wall-resolution-qualified or experimentally validated.",
+  "wall_boundary": "Fixed 26\u00b0C; differs from Python Robin wall heat exchange.",
+  "comfort_assumptions": "RH50%, met1.2, clo0.5, MRT26\u00b0C, speed floor0.05m/s",
+  "runtime_function_objects": "Disabled: distribution SHA1 stream failure. Solver logs/VTK export verified; yPlus function object failed, so wall resolution remains unqualified."
+}

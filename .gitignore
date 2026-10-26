@@ -1,3 +1,10 @@
 __pycache__/
 .venv/
 *.pyc
+site-dist/
+openfoam/cases/*/constant/polyMesh/
+openfoam/cases/*/VTK/
+openfoam/cases/*/postProcessing/
+openfoam/cases/*/log.*
+openfoam/cases/*/[1-9]*/
+.streamlit/secrets.toml

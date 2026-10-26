@@ -1,0 +1,18 @@
+{
+  "layout": "short_circuit",
+  "dimensions_m": [
+    8,
+    5,
+    3
+  ],
+  "flow_m3_s": 0.12,
+  "supply_c": 19,
+  "wall_c": 26,
+  "sensible_w": 600,
+  "solver": "buoyantBoussinesqPimpleFoam",
+  "release": "OpenCFD v1912 (Ubuntu package 1912.200626)",
+  "turbulence": "kOmegaSST",
+  "mesh_scale": 0.5,
+  "validation_status": "not experimentally validated",
+  "end_time_s": 600
+}

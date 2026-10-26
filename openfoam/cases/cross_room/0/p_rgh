@@ -1,0 +1,8 @@
+FoamFile { version 2.0; format ascii; class volScalarField; object p_rgh; }
+dimensions [0 2 -2 0 0 0 0];
+internalField uniform 0;
+boundaryField {
+supply { type fixedFluxPressure; value uniform 0; }
+return { type fixedValue; value uniform 0; }
+walls { type fixedFluxPressure; value uniform 0; }
+}

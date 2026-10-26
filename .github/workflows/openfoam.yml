@@ -1,0 +1,27 @@
+name: OpenFOAM 3-D URANS
+on:
+  workflow_dispatch:
+jobs:
+  rans:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends openfoam ripgrep
+      - run: pip install -r requirements-rans.txt
+      - name: Run both 600-second cases
+        run: |
+          bash openfoam/Allrun openfoam/cases/cross_room
+          python openfoam/analyze.py openfoam/cases/cross_room --layout cross_room --log openfoam/cases/cross_room/log.solver
+          bash openfoam/Allrun openfoam/cases/short_circuit
+          python openfoam/analyze.py openfoam/cases/short_circuit --layout short_circuit --log openfoam/cases/short_circuit/log.solver
+      - uses: actions/upload-artifact@v4
+        with:
+          name: openfoam-executed-fields
+          path: |
+            results/rans/
+            openfoam/cases/*/log.*
+            openfoam/cases/*/VTK/

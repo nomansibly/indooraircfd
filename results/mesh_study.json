@@ -1,0 +1,67 @@
+{
+  "coarse_cells": [
+    80,
+    30
+  ],
+  "fine_cells": [
+    120,
+    45
+  ],
+  "coarse": [
+    {
+      "layout": "cross_room",
+      "ach": 3.6,
+      "max_cell_mass_imbalance_m3_s": 2.0405362512534997e-14,
+      "occupied_mean_temperature_c": 23.358742678233934,
+      "occupied_mean_age_s": 665.432768659485,
+      "occupied_air_change_index": 1.5027814184962685,
+      "whole_room_air_exchange_efficiency": 0.7739362855378121,
+      "low_speed_fraction": 1.0,
+      "high_speed_fraction": 0.0,
+      "occupied_mean_pmv": -0.031145721947723443,
+      "occupied_mean_ppd": 5.830070830953195
+    },
+    {
+      "layout": "short_circuit",
+      "ach": 3.6,
+      "max_cell_mass_imbalance_m3_s": 1.8990614202712974e-15,
+      "occupied_mean_temperature_c": 27.686729159352105,
+      "occupied_mean_age_s": 3158.5374024622015,
+      "occupied_air_change_index": 0.3166022346990292,
+      "whole_room_air_exchange_efficiency": 0.1643325757102596,
+      "low_speed_fraction": 1.0,
+      "high_speed_fraction": 0.0,
+      "occupied_mean_pmv": 0.7126923690219598,
+      "occupied_mean_ppd": 16.981113014666523
+    }
+  ],
+  "fine": [
+    {
+      "layout": "cross_room",
+      "ach": 3.6,
+      "max_cell_mass_imbalance_m3_s": 5.845253751510238e-14,
+      "occupied_mean_temperature_c": 23.356277831013028,
+      "occupied_mean_age_s": 664.2094026718071,
+      "occupied_air_change_index": 1.5055492981241498,
+      "whole_room_air_exchange_efficiency": 0.7756232465998097,
+      "low_speed_fraction": 1.0,
+      "high_speed_fraction": 0.0,
+      "occupied_mean_pmv": -0.03160917320630788,
+      "occupied_mean_ppd": 5.842066458293713
+    },
+    {
+      "layout": "short_circuit",
+      "ach": 3.6,
+      "max_cell_mass_imbalance_m3_s": 6.248690800902956e-15,
+      "occupied_mean_temperature_c": 27.690258822582074,
+      "occupied_mean_age_s": 3164.318547460834,
+      "occupied_air_change_index": 0.31602380891849113,
+      "whole_room_air_exchange_efficiency": 0.16399590771518605,
+      "low_speed_fraction": 1.0,
+      "high_speed_fraction": 0.0,
+      "occupied_mean_pmv": 0.7132271613546576,
+      "occupied_mean_ppd": 17.006561561387254
+    }
+  ],
+  "note": "Two meshes only; sensitivity check, not proof of grid independence."
+}

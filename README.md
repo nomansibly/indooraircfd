@@ -3,9 +3,9 @@
 
 An engineering portfolio by **Sibly Noman** exploring room ventilation through three reproducible layers.
 
-**GitHub Pages:** https://siblynoman2003-beep.github.io/indooraircfd/
+**GitHub Pages:** https://nomansibly.github.io/indooraircfd/
 
-**Live public lab:** https://siblynoman2003-beep.github.io/indooraircfd/lab.html
+**Live public lab:** https://nomansibly.github.io/indooraircfd/lab.html
 
 | Layer | Implementation | Executed status |
 |---|---|---|
